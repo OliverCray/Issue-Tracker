@@ -5,12 +5,13 @@ import {
   updateIssue,
   deleteIssue,
 } from '../controllers/issueController.js'
+import { authMiddleware } from '../utils/authMiddleware.js'
 
 const router = express.Router()
 
-router.post('/', createIssue)
-router.get('/', getIssues)
-router.put('/:id', updateIssue)
-router.delete('/:id', deleteIssue)
+router.post('/', authMiddleware, createIssue)
+router.get('/', authMiddleware, getIssues)
+router.put('/:id', authMiddleware, updateIssue)
+router.delete('/:id', authMiddleware, deleteIssue)
 
 export default router
