@@ -1,9 +1,11 @@
-import router from './routes/index.js'
+import express from 'express'
 
-import authRoutes from './routes/authRoutes.js'
-import issueRoutes from './routes/issueRoutes.js'
+import authRoutes from './authRoutes.js'
+import issueRoutes from './issueRoutes.js'
 
-router.use('/api/auth', authRoutes)
-router.use('/api/issues', issueRoutes)
+const router = express.Router()
+
+router.use('/auth', authRoutes)
+router.use('/issues', issueRoutes)
 
 export default router

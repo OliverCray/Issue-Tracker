@@ -4,7 +4,7 @@ import cors from 'cors'
 import { createServer } from 'http'
 import { Server } from 'socket.io'
 import connection from './config/connection.js'
-import routes from './routes'
+import routes from './routes/index.js'
 
 dotenv.config()
 connection()
@@ -20,7 +20,7 @@ export const io = new Server(server, {
 app.use(cors())
 app.use(express.json())
 
-app.use(routes)
+app.use('/api', routes)
 
 io.on('connection', (socket) => {
   console.log('Socket connected:', socket.id)

@@ -1,5 +1,5 @@
-import { Issue } from '../models'
-import { io } from '../server' // Import websocket instance
+import { Issue } from '../models/index.js'
+import { io } from '../server.js' // Import websocket instance
 
 // Create issue
 export const createIssue = async (req, res) => {

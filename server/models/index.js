@@ -1,4 +1,4 @@
-import User from './User'
-import Issue from './Issue'
+import User from './User.js'
+import Issue from './Issue.js'
 
 export { User, Issue }
